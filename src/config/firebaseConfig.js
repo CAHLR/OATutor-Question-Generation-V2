@@ -8,4 +8,4 @@ const config = {
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
   };
   
-  export default config;
+export default config;

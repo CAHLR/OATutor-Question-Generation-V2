@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import ProblemWrapper from "@components/problem-layout/ProblemWrapper.js";
 import LessonSelectionWrapper from "@components/problem-layout/LessonSelectionWrapper.js";
 import { withRouter } from "react-router-dom";
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 import {
     coursePlans,
@@ -408,6 +409,8 @@ class Platform extends React.Component {
 
     render() {
         const { translate } = this.props;
+        const progressCount = this.completedProbs.size;
+        const totalProblems = 20;
         this.studentNameDisplay = this.context.studentName
         ? decodeURIComponent(this.context.studentName) + " | "
         : translate('platform.LoggedIn') + " | ";
@@ -453,22 +456,24 @@ class Platform extends React.Component {
                                 </div>
                             </Grid>
                             <Grid item xs={3} key={3}>
-                                <div
-                                    style={{
-                                        textAlign: "right",
-                                        paddingTop: "3px",
-                                    }}
-                                >
-                                    {this.state.status !== "courseSelection" &&
-                                    this.state.status !== "lessonSelection" &&
-                                    (this.lesson.showStuMastery == null ||
-                                        this.lesson.showStuMastery)
-                                        ? this.studentNameDisplay +
-                                        translate('platform.Mastery') +
-                                          Math.round(this.state.mastery * 100) +
-                                          "%"
-                                        : ""}
-                                </div>
+                            <div style={{ textAlign: "right", paddingTop: "3px" }}>
+        {this.state.status !== "courseSelection" &&
+        this.state.status !== "lessonSelection" &&
+        (this.lesson.showStuMastery == false || this.lesson.showStuMastery) ? (
+            <div style={{ textAlign: "center" }}>
+                <div>Progress: {progressCount}/{totalProblems}</div>
+                <div style={{ padding: "0 10px" }}>
+                    <LinearProgress
+                        variant="determinate"
+                        color= "secondary"
+                        value={(progressCount / totalProblems) * 100}
+                    />
+                </div>
+            </div>
+        ) : (
+            ""
+        )}
+    </div>
                             </Grid>
                         </Grid>
                     </Toolbar>
