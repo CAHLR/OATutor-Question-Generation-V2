@@ -512,19 +512,21 @@ class Platform extends React.Component {
                 )}
                 {this.state.status === "exhausted" ? (
                     <center>
-                        <h2>
-                        Thank you for completing the study. Your completion code is C134P6MO.
-                        </h2>
-                    </center>
+                    <h2>
+                        Thank you for completing the study. Your completion code is 
+                        <span style="background-color: yellow;">C134P6MO</span>.
+                    </h2>
+                </center>
                 ) : (
                     ""
                 )}
                 {this.state.status === "graduated" ? (
                     <center>
-                        <h2>
-                        Thank you for completing the study. Your completion code is C134P6MO.
-                        </h2>
-                    </center>
+                    <h2>
+                        Thank you for completing the study. Your completion code is 
+                        <span style="background-color: yellow;">C134P6MO</span>.
+                    </h2>
+                </center>
                 ) : (
                     ""
                 )}
