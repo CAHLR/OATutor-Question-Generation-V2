@@ -511,22 +511,22 @@ class Platform extends React.Component {
                     ""
                 )}
                 {this.state.status === "exhausted" ? (
-                    <center>
+                    <div style={{ textAlign: "center" }}>
                     <h2>
-                        Thank you for completing the study. Your completion code is 
-                        <span style="background-color: yellow;">C134P6MO</span>.
+                        Thank you for completing the study. Your completion code is{" "}
+                        <span style={{ backgroundColor: "yellow" }}>C134P6MO</span>.
                     </h2>
-                </center>
+                </div>
                 ) : (
                     ""
                 )}
                 {this.state.status === "graduated" ? (
-                    <center>
+                    <div style={{ textAlign: "center" }}>
                     <h2>
-                        Thank you for completing the study. Your completion code is 
-                        <span style="background-color: yellow;">C134P6MO</span>.
+                        Thank you for completing the study. Your completion code is{" "}
+                        <span style={{ backgroundColor: "yellow" }}>C134P6MO</span>.
                     </h2>
-                </center>
+                </div>
                 ) : (
                     ""
                 )}
