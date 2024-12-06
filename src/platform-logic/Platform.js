@@ -444,15 +444,7 @@ class Platform extends React.Component {
                                         paddingTop: "3px",
                                     }}
                                 >
-                                    {Boolean(
-                                        findLessonById(this.props.lessonID)
-                                    )
-                                        ? findLessonById(this.props.lessonID)
-                                              .name +
-                                          " " +
-                                          findLessonById(this.props.lessonID)
-                                              .topics
-                                        : ""}
+                                    {""}
                                 </div>
                             </Grid>
                             <Grid item xs={3} key={3}>
